@@ -1,0 +1,16 @@
+$index: calc(1vw + 1vh);
+$main-width: 100svw;
+$main-color: #292C33;
+$accent-color-1: #E9494F;
+$accent-color-2: #F7A173;
+$title-color-1: #32A997;
+$title-color-2: #F7A173;
+$liner-gradient: linear-gradient(
+  45deg, 
+  $accent-color-1,
+  $accent-color-2);
+$text-color: #ccc;
+$button-transition: 0.2s;
+$main-transition: 0.3s;
+$box-shadow: 0 .8em 1.2em rgba(black, 0.5);
+$text-shadow: .1em .1em .5em rgba(black, 0.4);

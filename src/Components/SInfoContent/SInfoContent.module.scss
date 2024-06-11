@@ -1,0 +1,49 @@
+@import '../../styles/Variables.scss';
+
+.wrapper {
+  background-image: url('../../img/image/гири.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: grid;
+  place-items: center;
+  padding: calc($index * 3);
+  .container {
+    width: 80svw;
+    display: flex;
+    flex-direction: column;
+    .containerItemOne {
+      display: flex;
+      flex-direction: row;
+    }
+    .containerItemTwo {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+  }
+}
+.contentItem {
+  max-width: 32svw;
+  padding: $index;
+  background-color: $main-color;
+  box-shadow: $box-shadow;
+  text-shadow: $text-shadow;
+  border-radius: $index;
+  h3 {
+    background: $liner-gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  h2 {
+    color: $title-color-1;
+  }
+  div {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+.container-for-button {
+  background-color: $main-color;
+}

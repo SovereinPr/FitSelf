@@ -1,0 +1,46 @@
+@import '../../styles/Variables.scss';
+
+.sectionTop {
+  display: flex;
+  flex-direction: row-reverse;
+  position: relative;
+}
+.glassContainer {
+  position: absolute;
+  top: 50%;
+  left: -20%;
+  transform: translateY(-50%);
+  z-index: 1;
+  width: 100%;
+  height: inherit;
+  display: grid;
+  place-items: center;
+  .glass {
+    max-width: 34.5svw;
+    padding: $index;
+    backdrop-filter: blur(calc($index * 0.4));
+    border-radius: $index;
+    border-right: 1px solid rgba(white, 0.5);
+    border-top: 1px solid rgba(white, 0.5);
+    box-shadow: $box-shadow;
+    text-shadow: $text-shadow;
+    h1 {
+      font-size: calc($index * 2.4);
+      background: $liner-gradient;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+.imageContainer {
+  width: min-content;
+  height: min-content;
+  border-bottom-left-radius: $index;
+  img {
+    height: calc($index * 23);
+    opacity: 0.75;
+    box-shadow: $box-shadow;
+    border-bottom-left-radius: inherit;
+  }
+}

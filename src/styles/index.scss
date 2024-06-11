@@ -1,0 +1,134 @@
+@import-normalize;
+@import './Variables.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+html, body {
+  overflow-x: hidden;
+}
+body {
+  width: $main-width;
+  height: 100%;
+  min-height: 100svh;
+  background-color: $main-color;
+  color: $text-color;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: normal;
+  line-height: 1.25;
+  font-size: calc($index * 0.8);
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: $text-color;
+}
+.header {
+  width: $main-width;
+  height: 8svh;
+  display: block;
+  top: 0;
+  position: fixed;
+  z-index: 100;
+  background-color: rgba($main-color, 0.8);
+  border-bottom: 1px solid $accent-color-1;
+}
+.header__content {
+  width: 80svw;
+  height: inherit;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .logo {
+    background: $liner-gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .navPage__ul {
+    display: flex;
+    gap: calc($index * 1.5);
+  }
+}
+.navPage__ul li {
+  border-bottom: 1px solid transparent;
+  padding: 3px;
+  transition: $button-transition;
+  a {
+    font-weight: 400;
+    transition: inherit;
+  }
+  &:hover, &:active {
+    border-color: $title-color-1;
+    a {
+      color: $title-color-1;
+    }
+  }
+}
+main {
+  width: $main-width;
+  margin: 8svh 0 calc($index * 4) 0;
+  display: flex;
+  flex-direction: column;
+  gap: calc($index * 4);
+  section {
+    width: inherit;
+  }
+}
+.SExercise div {
+  width: 90svw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: auto;
+  padding-right: calc($index * 2);
+  h1 {
+    font-size: calc($index * 4.5);
+    // color: rgba($accent-color-1, 0.7);
+    background: $liner-gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: $text-shadow;
+    pointer-events: none;
+  }
+  img {
+    height: calc($index * 7.5);
+  }
+}
+.button-container {
+  outline: none;
+  border: none;
+  width: calc($index * 5.5);
+  height: calc($index * 1.6);
+  border-radius: $index;
+  .button {
+    all: inherit;
+    border: 1px solid transparent;
+    background-color: $title-color-1;
+    color: $main-color;
+    font-size: calc($index * 0.7);
+    text-align: center;
+    transition: $button-transition;
+    &:hover {
+      border-color: $title-color-1;
+      background-color: transparent;
+      color: $title-color-1;
+    }
+  }
+}
+.Footer {
+  width: inherit;
+  height: 30svh;
+  padding: $index;
+  background: $liner-gradient;
+  text-align: center;
+}
