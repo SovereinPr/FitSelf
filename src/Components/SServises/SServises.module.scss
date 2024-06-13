@@ -11,21 +11,19 @@
   width: 80svw;
   height: inherit;
   padding: 0 $index;
-  box-shadow: inset 0 0 30px black;
+  box-shadow: inset 0 0 20px black;
   border-radius: $index;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
-.item__container {
+.item {
   display: grid;
   place-items: center;
 }
 .ServiseCard {
   width: calc($index * 9);
   height: calc($index * 11);
-  background: linear-gradient(
-    to right, 
-   $accent-color-1, rgba($accent-color-2, 0.6));
+  background: $liner-gradient;
   border-radius: $index;
   display: flex;
   flex-direction: column;

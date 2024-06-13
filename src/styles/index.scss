@@ -59,23 +59,29 @@ a {
   }
 }
 .navPage__ul li {
-  border-bottom: 1px solid transparent;
   padding: 3px;
   transition: $button-transition;
+  border-bottom: 1px solid transparent;
   a {
     font-weight: 400;
     transition: inherit;
+    user-select: none;
   }
-  &:hover, &:active {
-    border-color: $title-color-1;
+  .active {
+    color: $title-color;
+    text-decoration: overline;
+    user-select: none;
+  }
+  &:hover {
+    border-color: $title-color;
     a {
-      color: $title-color-1;
+      color: $title-color;
     }
   }
 }
 main {
   width: $main-width;
-  margin: 8svh 0 calc($index * 4) 0;
+  margin-top: 8svh;
   display: flex;
   flex-direction: column;
   gap: calc($index * 4);
@@ -92,7 +98,6 @@ main {
   padding-right: calc($index * 2);
   h1 {
     font-size: calc($index * 4.5);
-    // color: rgba($accent-color-1, 0.7);
     background: $liner-gradient;
     background-clip: text;
     -webkit-background-clip: text;
@@ -110,24 +115,25 @@ main {
   width: calc($index * 5.5);
   height: calc($index * 1.6);
   border-radius: $index;
+  user-select: none;
   .button {
     all: inherit;
     border: 1px solid transparent;
-    background-color: $title-color-1;
+    background-color: $title-color;
     color: $main-color;
     font-size: calc($index * 0.7);
     text-align: center;
     transition: $button-transition;
     &:hover {
-      border-color: $title-color-1;
+      border-color: $title-color;
       background-color: transparent;
-      color: $title-color-1;
+      color: $title-color;
     }
   }
 }
 .Footer {
   width: inherit;
-  height: 30svh;
+  height: 20svh;
   padding: $index;
   background: $liner-gradient;
   text-align: center;

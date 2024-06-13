@@ -2,7 +2,7 @@
 function Button(props) {
   return (
     <a href={props.link} className='button-container'>
-      <button className='button'>{props.text}</button>
+      <button className='button' title={props.title}>{props.text}</button>
     </a>
   )
 }

@@ -1,5 +1,10 @@
 @import '../../styles/Variables.scss';
 
+.containerItemWater {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20svh;
+}
 .wrapper {
   background-image: url('../../img/image/гири.jpg');
   background-repeat: no-repeat;
@@ -9,39 +14,49 @@
   display: grid;
   place-items: center;
   padding: calc($index * 3);
+  padding-top: 0;
+  border-top-left-radius: $index;
+  border-top-right-radius: $index;
+  box-shadow: inset 0 0 20px black;
   .container {
     width: 80svw;
     display: flex;
     flex-direction: column;
     .containerItemOne {
+      padding-top: calc($index * 3);
       display: flex;
       flex-direction: row;
     }
     .containerItemTwo {
+      padding-top: calc($index * 3);
       display: flex;
       flex-direction: row-reverse;
     }
   }
 }
 .contentItem {
-  max-width: 32svw;
+  max-width: 33svw;
   padding: $index;
   background-color: $main-color;
   box-shadow: $box-shadow;
   text-shadow: $text-shadow;
   border-radius: $index;
   h3 {
+    text-align: center;
     background: $liner-gradient;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   h2 {
-    color: $title-color-1;
+    text-align: center;
+    color: $title-color;
   }
   div {
+    border-top: 1px solid $title-color;
+    padding-top: $index;
     display: flex;
-    flex-direction: row-reverse;
+    justify-content: center;
   }
 }
 .container-for-button {

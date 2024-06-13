@@ -8,7 +8,6 @@ function ServiseCard(props) {
           <img src={props.img} alt={props.alt} />
           <h5>{props.nameServise}</h5>
         </div>
-        <a href={props.link} className={styles.linkCard}></a>
       </div>
     </a>
   )
