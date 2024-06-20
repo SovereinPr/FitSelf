@@ -5,24 +5,6 @@ import { NavLink } from 'react-router-dom';
 
 function SInfoContent() {
   return(
-    <>
-    <div className={styles.containerItemWater}>
-      <article className={styles.contentItem}>
-        <h3>Польза для здоровья</h3>
-        <br />
-        <h2>Физические упражнения дают Вашему Телу Крылья</h2>
-        <br />
-        <p>Физическая активность может принести немедленную и долгосрочную пользу здоровью. Самое главное, регулярная физическая активность может улучшить качество вашей жизни.</p>
-      </article>
-      <article className={styles.contentItem}>
-        <h3>Улучшить настроение</h3>
-        <br />
-        <h2>Делает Вас Более Активными <br /> И Улучшает Настроение</h2>
-        <br />
-        <p>Физическая активность и физические упражнения могут принести немедленную и долгосрочную пользу здоровью. Самое главное, регулярная физическая активность может улучшить качество вашей жизни.Физические упражнения могут улучшить ваше здоровье и снизить риск.</p>
-      </article>
-    </div>
-    
     <section className={styles.wrapper}>
       <div className={styles.container}>
 
@@ -71,7 +53,6 @@ function SInfoContent() {
 
       </div>
     </section>
-    </>
   )
 }
 

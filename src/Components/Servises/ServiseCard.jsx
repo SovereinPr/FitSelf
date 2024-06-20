@@ -1,4 +1,4 @@
-import styles from './SServises.module.scss'
+import styles from '../../pages/HomePage/Home.module.scss'
 
 function ServiseCard(props) {
   return (

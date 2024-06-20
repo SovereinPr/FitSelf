@@ -1,3 +1,4 @@
+import styles from './Tasks.module.scss';
 
 function Tasks() {
   return(

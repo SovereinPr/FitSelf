@@ -30,7 +30,7 @@ a {
   text-decoration: none;
   color: $text-color;
 }
-.header {
+.Header {
   width: $main-width;
   height: 8svh;
   display: block;
@@ -38,9 +38,9 @@ a {
   position: fixed;
   z-index: 100;
   background-color: rgba($main-color, 0.8);
-  border-bottom: 1px solid $accent-color-1;
+  border-bottom: 1px solid $title-color;
 }
-.header__content {
+.Header__content {
   width: 80svw;
   height: inherit;
   margin-inline: auto;
@@ -55,58 +55,43 @@ a {
   }
   .navPage__ul {
     display: flex;
-    gap: calc($index * 1.5);
+    gap: calc($index * 0.5);
   }
 }
 .navPage__ul li {
-  padding: 3px;
   transition: $button-transition;
-  border-bottom: 1px solid transparent;
   a {
     font-weight: 400;
-    transition: inherit;
     user-select: none;
+    transition: $button-transition;
+    p {
+      color: $grey-color;
+      padding: 4px 12px;
+      border-bottom: 1px solid transparent;
+      transition: inherit;
+    }
   }
+  &:hover a p {
+    color: white;
+    }
   .active {
-    color: $title-color;
-    text-decoration: overline;
     user-select: none;
-  }
-  &:hover {
-    border-color: $title-color;
-    a {
-      color: $title-color;
+    cursor: default;
+    p {
+      color: white;
+      border-color: $title-color;
     }
   }
 }
 main {
   width: $main-width;
+  min-height: calc(100svh - (9svh + 8svh));
   margin-top: 8svh;
   display: flex;
   flex-direction: column;
-  gap: calc($index * 4);
+  gap: calc($index * 4.4);
   section {
     width: inherit;
-  }
-}
-.SExercise div {
-  width: 90svw;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-left: auto;
-  padding-right: calc($index * 2);
-  h1 {
-    font-size: calc($index * 4.5);
-    background: $liner-gradient;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: $text-shadow;
-    pointer-events: none;
-  }
-  img {
-    height: calc($index * 7.5);
   }
 }
 .button-container {
@@ -133,8 +118,9 @@ main {
 }
 .Footer {
   width: inherit;
-  height: 20svh;
+  min-height: 9svh;
   padding: $index;
   background: $liner-gradient;
   text-align: center;
+  color: $main-color;
 }

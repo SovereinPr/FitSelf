@@ -1,10 +1,5 @@
 @import '../../styles/Variables.scss';
 
-.containerItemWater {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 20svh;
-}
 .wrapper {
   background-image: url('../../img/image/гири.jpg');
   background-repeat: no-repeat;
@@ -59,6 +54,4 @@
     justify-content: center;
   }
 }
-.container-for-button {
-  background-color: $main-color;
-}
+

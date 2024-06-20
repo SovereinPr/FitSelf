@@ -1,0 +1,138 @@
+@import '../../styles/Variables.scss';
+
+.sectionTop {
+  display: flex;
+  flex-direction: row-reverse;
+  position: relative;
+}
+.glassContainer {
+  position: absolute;
+  top: 50%;
+  left: -20%;
+  transform: translateY(-50%);
+  z-index: 1;
+  width: 100%;
+  height: inherit;
+  display: grid;
+  place-items: center;
+  .glass {
+    max-width: 34.5svw;
+    padding: $index;
+    backdrop-filter: blur(calc($index * 0.4));
+    border-radius: $index;
+    border-right: 1px solid rgba(white, 0.5);
+    border-top: 1px solid rgba(white, 0.5);
+    box-shadow: $box-shadow;
+    text-shadow: $text-shadow;
+    h1 {
+      font-size: calc($index * 2.4);
+      background: $liner-gradient;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: $text-shadow;
+    }
+  }
+}
+.imageContainer {
+  width: min-content;
+  height: min-content;
+  border-bottom-left-radius: $index;
+  img {
+    height: calc($index * 23);
+    opacity: 0.75;
+    box-shadow: $box-shadow;
+    border-bottom-left-radius: inherit;
+  }
+}
+.SExercise {
+  text-align: center;
+  h1 {
+    font-size: calc($index * 4.5);
+    background: $liner-gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: $text-shadow;
+    pointer-events: none;
+  }
+  img {
+    height: calc($index * 7.5);
+  }
+}
+.sectionServises {
+  width: inherit;
+  height: calc(40svh + ($index * 2));
+  display: flex;
+  justify-content: center;
+}
+.sectionServises__container {
+  width: 80svw;
+  height: inherit;
+  padding: 0 $index;
+  box-shadow: inset 0 0 20px black;
+  border-radius: $index;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.cardContainer {
+  display: grid;
+  place-items: center;
+}
+.ServiseCard {
+  width: calc($index * 9);
+  height: calc($index * 11);
+  background: $liner-gradient;
+  border-radius: $index;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 16px rgba(black, 0.4);
+  transition: $main-transition;
+  &:hover {
+    box-shadow: 0 15px 25px rgba($accent-color-1, 0.5);
+    transform: translateY(-10%);
+  }
+}
+.ServiseCard__content {
+  width: min-content;
+  display: flex;
+  flex-direction: column;
+  gap: calc($index * 1.4);
+  align-items: center;
+  text-align: center;
+  img {
+    width: calc($index * 3.3);
+    height: calc($index * 3.3);
+  }
+}
+.containerItemWater {
+  width: 90svw;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: calc($index * 3);
+  border-radius: $index;
+  box-shadow: inset 0 0 20px black;
+  article {
+    max-width: 33svw;
+    padding: $index;
+    border: 1px solid $accent-color-1;
+    text-shadow: $text-shadow;
+    border-radius: $index;
+    h3 {
+      text-align: center;
+      background: $liner-gradient;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    h2 {
+      text-align: center;
+      color: $title-color;
+    }
+  }
+}
+

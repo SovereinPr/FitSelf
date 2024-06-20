@@ -2,7 +2,7 @@
 function Footer() {
   return(
     <footer className="Footer">
-      <div>
+      <div className="Footer__content">
         <p>Created by SovereinPr Team</p>
       </div>
     </footer>
