@@ -1,6 +1,5 @@
 import SInfoContent from '../../Components/SInfoContent/SInfoContent'
 import ServiseCard from '../../Components/Servises/ServiseCard'
-import '../../img/image/fitSelf.jpg'
 import styles from './Home.module.scss'
 
 function Home() {
