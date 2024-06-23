@@ -35,15 +35,14 @@
 	}
 }
 .imageContainer {
-	width: min-content;
-	height: min-content;
+	height: calc($index * 23);
 	border-bottom-left-radius: $index;
-	img {
-		height: calc($index * 23);
-		opacity: 0.75;
-		box-shadow: $box-shadow;
-		border-bottom-left-radius: inherit;
-	}
+	aspect-ratio: 18 /9;
+	background-image: url('../../../public/img/image/fitSelf.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	box-shadow: $box-shadow;
 }
 .SExercise {
 	text-align: center;
@@ -55,9 +54,6 @@
 		-webkit-text-fill-color: transparent;
 		text-shadow: $text-shadow;
 		pointer-events: none;
-	}
-	img {
-		height: calc($index * 7.5);
 	}
 }
 .sectionServises {
@@ -119,9 +115,10 @@
 	article {
 		max-width: 33svw;
 		padding: $index;
-		border: 1px solid $accent-color-1;
+		border: 1px solid $title-color;
 		text-shadow: $text-shadow;
 		border-radius: $index;
+		box-shadow: $box-shadow;
 		h3 {
 			text-align: center;
 			background: $liner-gradient;
