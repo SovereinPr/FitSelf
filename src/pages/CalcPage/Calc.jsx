@@ -26,6 +26,7 @@ function Calc() {
 				}
 			} else {
 				outputResult.innerHTML = 'Заполните, пожалуйста, все поля.';
+        outputResult.style.color = '#E9494F'
 			}
 		});
 	}, []);

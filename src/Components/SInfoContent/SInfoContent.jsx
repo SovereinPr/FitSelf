@@ -8,21 +8,6 @@ function SInfoContent() {
     <section className={styles.wrapper}>
       <div className={styles.container}>
 
-
-        <div className={styles.containerItemOne} id='infoTasks'>
-          <article className={styles.contentItem}>
-            <h3>Трекер задач</h3>
-            <br />
-            <h2>Оставайтесь в форме с помощью нашего трекера задач</h2>
-            <br />
-            <p>Выберите из списка различных упражнений и тренировок, которые наилучшим образом подходят под ваши потребности и предпочтения. Затем отслеживайте свой прогресс, отмечая выполненные задачи, и наблюдайте, как ваша физическая форма улучшается с течением времени.</p>
-            <br />
-            <div>
-              <NavLink to="/tasks"><Button text='Интересно' title='Перейти к задачам' /></NavLink>
-            </div>
-          </article>
-        </div>
-
         <div className={styles.containerItemTwo} id='infoCalculator'>
           <article className={styles.contentItem}>
             <h3>Калькулятор калорий</h3>

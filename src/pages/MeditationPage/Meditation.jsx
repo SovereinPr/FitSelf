@@ -94,7 +94,7 @@ function Meditation() {
             playing={false}
             loop={false}
             controls={false}
-            />
+          />
         </div>
 
 			</div>

@@ -32,11 +32,7 @@ a {
 }
 .Header {
   width: $main-width;
-  height: 8svh;
-  display: block;
-  top: 0;
-  position: fixed;
-  z-index: 100;
+  height: 9svh;
   background-color: rgba($main-color, 0.8);
   border-bottom: 1px solid $title-color;
 }
@@ -85,8 +81,7 @@ a {
 }
 main {
   width: $main-width;
-  min-height: calc(100svh - (9svh + 8svh + 1px));
-  margin-top: 8svh;
+  min-height: calc(100svh - (9svh + 1px + 9svh));
   display: flex;
   flex-direction: column;
   section {
@@ -107,7 +102,7 @@ main {
   }
 }
 .main {
-  gap: calc($index * 4.4);
+  gap: calc($index * 3);
 }
 .button-container {
   outline: none;
@@ -122,15 +117,20 @@ main {
     color: $main-color;
     font-size: calc($index * 0.7);
     text-align: center;
+    box-shadow: $box-shadow;
     transition: $button-transition;
     &:hover {
       border-color: $title-color;
-      background-color: transparent;
+      background-color: rgba(black, 0.2);
       color: $title-color;
     }
     &:disabled {
       background-color: $grey-color;
       pointer-events: none;
+      box-shadow: none;
+    }
+    &:active {
+      box-shadow: none;
     }
   }
 }

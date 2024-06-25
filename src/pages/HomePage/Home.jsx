@@ -13,35 +13,24 @@ function Home() {
             <p>Тренажерный зал - это клуб, здание или большая комната, содержащая специальное оборудование, куда люди ходят расслабится.</p>
           </article>
         </div>
-        <div className={styles.imageContainer}></div>
       </section>
       <section className={styles.SExercise}>
         <h1>FitSelf &mdash; New Sports</h1>
       </section>
       <section className={styles.sectionServises}>
         <div className={styles.sectionServises__container}>
-          <div className={styles.cardContainer}>
-            <ServiseCard 
-            img='img/icons/iconTasks.svg' alt='img' 
-            nameServise='Задачи' 
-            link='#infoTasks' />
-          </div>
-          <div className={styles.cardContainer}>
-            <ServiseCard 
+          <ServiseCard 
             img='img/icons/iconCalc.svg' alt='img' 
             nameServise='Калькулятор калорий' 
             link='#infoCalculator' />
-          </div>
-          <div className={styles.cardContainer}>
-            <ServiseCard 
+          <ServiseCard 
             img='img/icons/iconMeditation.svg' alt='img' 
             nameServise='Медитация' 
             link='#infoMeditation' />
-          </div>
         </div>
       </section>
       <section>
-        <div className={styles.containerItemWater}>
+        <div className={styles.sectionContent}>
           <article>
             <h3>Польза для здоровья</h3>
             <br />
