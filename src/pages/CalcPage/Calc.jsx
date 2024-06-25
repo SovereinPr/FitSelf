@@ -24,13 +24,44 @@ function Calc() {
 					10 * formInputWeight.value +
 					6.25 * formInputHeight.value -
 					5 * formInputAge.value
+				let calories = 0
+				let dietPlan = {}
+
 				switch (formInputFloor.value) {
 					case 'man':
-						outputResult.innerHTML = calculation + 5
+						calories = calculation + 5
+						dietPlan = createDietPlan(calories)
 						break
 					case 'gerl':
-						outputResult.innerHTML = calculation - 161
+						calories = calculation - 161
+						dietPlan = createDietPlan(calories)
 						break
+				}
+
+				outputResult.innerHTML = calories
+
+				if (calories > 0) {
+					const dietPlanElement = document.getElementById('dietPlan')
+					dietPlanElement.innerHTML = `
+						<div>
+							<h3>Рацион питания:</h3>
+							<p>
+								Завтрак: ${dietPlan.breakfast
+									.map(item => `${item.name} (${item.calories} ккал)`)
+									.join(', ')}
+							</p>
+							<p>
+								Обед: ${dietPlan.lunch
+									.map(item => `${item.name} (${item.calories} ккал)`)
+									.join(', ')}
+							</p>
+							<p>
+								Ужин: ${dietPlan.dinner
+									.map(item => `${item.name} (${item.calories} ккал)`)
+									.join(', ')}
+							</p>
+						</div>
+					`
 				}
 			} else {
 				outputResult.innerHTML = 'Заполните, пожалуйста, все поля.'
@@ -38,6 +69,19 @@ function Calc() {
 			}
 		})
 	}, [])
+
+	const createDietPlan = calories => {
+		return {
+			breakfast: [{ name: 'Овсянка', calories: Math.round(calories * 0.25) }],
+			lunch: [
+				{
+					name: 'Куриная грудка с овощами',
+					calories: Math.round(calories * 0.5),
+				},
+			],
+			dinner: [{ name: 'Творог', calories: Math.round(calories * 0.25) }],
+		}
+	}
 
 	return (
 		<main>
@@ -112,6 +156,7 @@ function Calc() {
 					Рекомендуемая суточная норма калорий: <br />
 					<span id='outputResult'>____</span>
 				</p>
+				<div id='dietPlan'></div>
 			</div>
 		</main>
 	)
