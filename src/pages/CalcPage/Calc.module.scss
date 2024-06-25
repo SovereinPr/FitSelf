@@ -1,102 +1,101 @@
 @import '../../styles/Variables.scss';
 
 .container {
-  height: 100%;
-  padding: $index calc($index * 4);
-  margin-bottom: calc($index * 2);
-  display: flex;
-  justify-content: space-between;
-  color: $accent-color-2;
+	height: 100%;
+	padding: $index calc($index * 4);
+	margin-bottom: calc($index * 2);
+	display: flex;
+	justify-content: space-between;
+	color: $accent-color-2;
 }
 .calculator {
-  width: 50svw;
-  height: 50svh;
-  padding: calc($index * 1.5);
-  border-radius: $index;
-  box-shadow: inset 0 0 20px black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+	width: 50svw;
+	height: 50svh;
+	padding: calc($index * 1.5);
+	border-radius: $index;
+	box-shadow: inset 0 0 20px black;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
 }
 .formFloor {
-  width: 30svw;
-  display: flex;
-  justify-content: space-between;
+	width: 30svw;
+	display: flex;
+	justify-content: space-between;
 }
-.inputFloor input[type=radio] {
-  display: none;
+.inputFloor input[type='radio'] {
+	display: none;
 }
 .inputFloor label {
 	display: inline-block;
 	padding: calc($index * 0.3) calc($index * 0.5);
 	line-height: $index;
 	border: 1px solid $grey-color;
-  color: $grey-color;
+	color: $grey-color;
 	border-radius: $index;
 	cursor: pointer;
 	user-select: none;
-  transition: $button-transition;
+	transition: $button-transition;
 }
 .inputFloor label:hover {
-  color: $title-color;
-  border-color: $title-color;
-  box-shadow: 0 0 6px $title-color;
+	color: $title-color;
+	border-color: $title-color;
+	box-shadow: 0 0 6px $title-color;
 }
-.inputFloor input[type=radio]:checked + label {
+.inputFloor input[type='radio']:checked + label {
 	border-color: $accent-color-2;
-  color: $accent-color-2;
-  box-shadow: 0 0 6px $accent-color-2;
-  user-select: none;
-  pointer-events: none;
+	color: $accent-color-2;
+	box-shadow: 0 0 6px $accent-color-2;
+	user-select: none;
+	pointer-events: none;
 }
 .formIn {
-  display: flex;
-  label {
-    margin-right: calc($index * 0.5);
-  }
+	display: flex;
+	label {
+		margin-right: calc($index * 0.5);
+	}
 }
 .inputIn {
-  padding-inline: $index;
-  &:nth-child(2) {
-    border-left: 1px solid $grey-color;
-    border-right: 1px solid $grey-color;
-  }
+	padding-inline: $index;
+	&:nth-child(2) {
+		border-left: 1px solid $grey-color;
+		border-right: 1px solid $grey-color;
+	}
 }
 .submitCalcButton {
-  outline: none;
-  border: none;
-  padding: calc($index * 0.4) calc($index * 0.5);
-  border-radius: $index;
-  user-select: none;
-  border: 1px solid transparent;
-  background-color: $title-color;
-  color: $main-color;
-  font-size: calc($index * 0.7);
-  font-weight: 500;
-  text-align: center;
-  box-shadow: $box-shadow;
-  transition: $button-transition;
-  &:hover {
-    border-color: $title-color;
-    background-color: rgba(black, 0.2);
-    color: $title-color;
-  }
-  &:disabled {
-    background-color: $grey-color;
-    pointer-events: none;
-    box-shadow: none;
-  }
-  &:active {
-    box-shadow: none;
-  }
+	outline: none;
+	border: none;
+	padding: calc($index * 0.4) calc($index * 0.5);
+	border-radius: $index;
+	user-select: none;
+	border: 1px solid transparent;
+	background-color: $title-color;
+	color: $main-color;
+	font-size: calc($index * 0.7);
+	font-weight: 500;
+	text-align: center;
+	box-shadow: $box-shadow;
+	transition: $button-transition;
+	&:hover {
+		border-color: $title-color;
+		background-color: rgba(black, 0.2);
+		color: $title-color;
+	}
+	&:disabled {
+		background-color: $grey-color;
+		pointer-events: none;
+		box-shadow: none;
+	}
+	&:active {
+		box-shadow: none;
+	}
 }
 .result {
-  color: $title-color;
-  font-size: $index;
-  span {
-    font-size: calc($index * 1.5);
-    color: $accent-color-2;
-  }
+	color: $title-color;
+	font-size: $index;
+	span {
+		font-size: calc($index * 1.5);
+		color: $accent-color-2;
+	}
 }
-
