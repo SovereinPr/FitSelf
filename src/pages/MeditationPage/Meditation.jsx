@@ -116,9 +116,8 @@ function Meditation() {
 					</div>
 				</div>
 
-				<div className={styles.playerContainer}>
-					<ReactPlayer url={videoUrl} playing={playVideo} controls={false} />{' '}
-					{/* Hide YouTube controls */}
+				<div className={styles.playerWrapper}>
+					<ReactPlayer url={videoUrl} playing={playVideo} controls={false} />
 				</div>
 			</div>
 		</main>
