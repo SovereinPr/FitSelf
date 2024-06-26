@@ -32,7 +32,7 @@ function Calc() {
 						calories = calculation + 5
 						dietPlan = createDietPlan(calories)
 						break
-					case 'gerl':
+					case 'girl':
 						calories = calculation - 161
 						dietPlan = createDietPlan(calories)
 						break
@@ -43,44 +43,113 @@ function Calc() {
 				if (calories > 0) {
 					const dietPlanElement = document.getElementById('dietPlan')
 					dietPlanElement.innerHTML = `
-						<div>
-							<h3>Рацион питания:</h3>
-							<p>
-								Завтрак: ${dietPlan.breakfast
-									.map(item => `${item.name} (${item.calories} ккал)`)
+            <div>
+              <h3>Рацион питания:</h3>
+              <p>
+                Завтрак: ${dietPlan.breakfast
+									.map(
+										item =>
+											`${item.name} (${item.calories} ккал, ${item.weight} г)`
+									)
 									.join(', ')}
-							</p>
-							<p>
-								Обед: ${dietPlan.lunch
-									.map(item => `${item.name} (${item.calories} ккал)`)
+              </p>
+              <p>
+                Обед: ${dietPlan.lunch
+									.map(
+										item =>
+											`${item.name} (${item.calories} ккал, ${item.weight} г)`
+									)
 									.join(', ')}
-							</p>
-							<p>
-								Ужин: ${dietPlan.dinner
-									.map(item => `${item.name} (${item.calories} ккал)`)
+              </p>
+              <p>
+                Ужин: ${dietPlan.dinner
+									.map(
+										item =>
+											`${item.name} (${item.calories} ккал, ${item.weight} г)`
+									)
 									.join(', ')}
-							</p>
-						</div>
-					`
+              </p>
+            </div>
+          `
+				} else {
+					outputResult.innerHTML = 'Заполните, пожалуйста, все поля.'
+					outputResult.style.color = '#E9494F'
 				}
-			} else {
-				outputResult.innerHTML = 'Заполните, пожалуйста, все поля.'
-				outputResult.style.color = '#E9494F'
 			}
 		})
 	}, [])
 
 	const createDietPlan = calories => {
-		return {
-			breakfast: [{ name: 'Овсянка', calories: Math.round(calories * 0.25) }],
-			lunch: [
-				{
-					name: 'Куриная грудка с овощами',
-					calories: Math.round(calories * 0.5),
+		const breakfast = [
+			{
+				name: 'Овсянка',
+				calories: Math.round(calories * 0.25),
+				weight: Math.round((calories * 0.25) / 4), // 4 kcal/g
+				bzu: {
+					protein: 20,
+					fat: 30,
+					carbohydrates: 50,
 				},
-			],
-			dinner: [{ name: 'Творог', calories: Math.round(calories * 0.25) }],
-		}
+			},
+			{
+				name: 'Яйцо',
+				calories: Math.round(calories * 0.05),
+				weight: Math.round((calories * 0.05) / 3.5), // 3.5 kcal/g
+				bzu: {
+					protein: 35,
+					fat: 25,
+					carbohydrates: 10,
+				},
+			},
+		]
+
+		const lunch = [
+			{
+				name: 'Куриная грудка с овощами',
+				calories: Math.round(calories * 0.5),
+				weight: Math.round((calories * 0.5) / 3.5), // 3.5 kcal/g
+				bzu: {
+					protein: 40,
+					fat: 20,
+					carbohydrates: 30,
+				},
+			},
+			{
+				name: 'Брокколи',
+				calories: Math.round(calories * 0.05),
+				weight: Math.round((calories * 0.05) / 0.5), // 0.5 kcal/g
+				bzu: {
+					protein: 20,
+					fat: 10,
+					carbohydrates: 60,
+				},
+			},
+		]
+
+		const dinner = [
+			{
+				name: 'Творог',
+				calories: Math.round(calories * 0.25),
+				weight: Math.round((calories * 0.25) / 4), // 4 kcal/g
+				bzu: {
+					protein: 30,
+					fat: 20,
+					carbohydrates: 40,
+				},
+			},
+			{
+				name: 'Яблоко',
+				calories: Math.round(calories * 0.05),
+				weight: Math.round((calories * 0.05) / 0.5), // 0.5 kcal/g
+				bzu: {
+					protein: 10,
+					fat: 5,
+					carbohydrates: 80,
+				},
+			},
+		]
+
+		return { breakfast, lunch, dinner }
 	}
 
 	return (
@@ -105,12 +174,12 @@ function Calc() {
 						<div className={styles.inputFloor}>
 							<input
 								className={styles.radioFloor}
-								id='gerl'
+								id='girl'
 								type='radio'
 								name='floor'
-								value='gerl'
+								value='girl'
 							/>
-							<label htmlFor='gerl'>Женский</label>
+							<label htmlFor='girl'>Женский</label>
 						</div>
 					</div>
 					<div className={styles.formIn}>
@@ -155,8 +224,8 @@ function Calc() {
 				<p className={styles.result}>
 					Рекомендуемая суточная норма калорий: <br />
 					<span id='outputResult'>____</span>
+					<div id='dietPlan'></div>
 				</p>
-				<div id='dietPlan'></div>
 			</div>
 		</main>
 	)

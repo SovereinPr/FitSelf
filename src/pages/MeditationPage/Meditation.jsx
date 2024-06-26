@@ -6,6 +6,10 @@ function Meditation() {
 	const [timeRemaining, setTimeRemaining] = useState(0)
 	const [isRunning, setIsRunning] = useState(false)
 	const [isPaused, setIsPaused] = useState(false)
+	const [videoUrl, setVideoUrl] = useState(
+		'https://www.youtube.com/embed/kndqIj8Qgok?controls=0&modestbranding=1&rel=0&autoplay=1'
+	)
+	const [playVideo, setPlayVideo] = useState(false)
 
 	useEffect(() => {
 		let intervalId
@@ -16,6 +20,7 @@ function Meditation() {
 					if (prevTime <= 0) {
 						clearInterval(intervalId)
 						setIsRunning(false)
+						setPlayVideo(false) // Остановить видео, когда таймер закончится
 						return 0
 					}
 					return prevTime - 1
@@ -26,35 +31,37 @@ function Meditation() {
 		}
 
 		return () => clearInterval(intervalId)
-	}, [isRunning, isPaused, timeRemaining])
+	}, [isRunning, isPaused])
 
 	const handleStart = () => {
 		setIsRunning(true)
 		setIsPaused(false)
+		setPlayVideo(true) // Начать воспроизведение видео
 	}
 
 	const handlePause = () => {
 		setIsPaused(true)
+		setPlayVideo(false) // Пауза видео
 	}
 
 	const handleResume = () => {
 		setIsPaused(false)
+		setPlayVideo(true) // Продолжить воспроизведение видео
 	}
 
 	const handleReset = () => {
 		setTimeRemaining(0)
 		setIsRunning(false)
 		setIsPaused(false)
+		setPlayVideo(false) // Остановить видео
 	}
 
 	const handleSetTime = newTime => {
-		setTimeRemaining(newTime)
+		setTimeRemaining(newTime * 60) // Преобразовать минуты в секунды
 	}
 
 	const minutes = Math.floor(timeRemaining / 60)
 	const seconds = timeRemaining % 60
-
-	let urlVideos = 'https://youtu.be/kndqIj8Qgok?si=XDxxKJZD0EkBA1I1' // default url
 
 	return (
 		<main>
@@ -98,28 +105,20 @@ function Meditation() {
 						</button>
 					</div>
 					<div className={styles.inputTime__container}>
-						Введите колличество минут, для таймера:{' '}
-						{
-							<input
-								className={styles.inputTime}
-								type='number'
-								min='60'
-								step={60}
-								value={timeRemaining}
-								onChange={e => handleSetTime(parseInt(e.target.value, 10))}
-							/>
-						}
+						Введите количество минут, для таймера:{' '}
+						<input
+							className={styles.inputTime}
+							type='number'
+							min='1'
+							value={Math.floor(timeRemaining / 60)}
+							onChange={e => handleSetTime(parseInt(e.target.value, 10))}
+						/>
 					</div>
 				</div>
 
 				<div className={styles.playerContainer}>
-					<ReactPlayer
-						url={urlVideos}
-						width='40svw'
-						playing={false}
-						loop={false}
-						controls={false}
-					/>
+					<ReactPlayer url={videoUrl} playing={playVideo} controls={false} />{' '}
+					{/* Hide YouTube controls */}
 				</div>
 			</div>
 		</main>
